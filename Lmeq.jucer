@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="cJaMme" name="Lmeq" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+  <MAINGROUP id="nwbTWI" name="Lmeq">
+    <GROUP id="{263B419D-60BA-44A2-CCF4-B3F21C3175D3}" name="Source">
+      <GROUP id="{04B365DB-3186-B765-68B4-8F399A74A987}" name="dsp">
+        <FILE id="caGdLW" name="linearEQ.cpp" compile="1" resource="0" file="Source/dsp/linearEQ.cpp"/>
+        <FILE id="LOdL0h" name="linearEQ.h" compile="0" resource="0" file="Source/dsp/linearEQ.h"/>
+        <FILE id="ZVXDCi" name="biquad.cpp" compile="1" resource="0" file="Source/dsp/biquad.cpp"/>
+        <FILE id="D01aIN" name="biquad.h" compile="0" resource="0" file="Source/dsp/biquad.h"/>
+        <FILE id="onBPvT" name="complex.cpp" compile="1" resource="0" file="Source/dsp/complex.cpp"/>
+        <FILE id="TQGpIk" name="complex.h" compile="0" resource="0" file="Source/dsp/complex.h"/>
+        <FILE id="Hiv10x" name="eq.cpp" compile="1" resource="0" file="Source/dsp/eq.cpp"/>
+        <FILE id="tJECG9" name="eq.h" compile="0" resource="0" file="Source/dsp/eq.h"/>
+        <FILE id="u93MCR" name="fft.cpp" compile="1" resource="0" file="Source/dsp/fft.cpp"/>
+        <FILE id="gEq2eM" name="fft.h" compile="0" resource="0" file="Source/dsp/fft.h"/>
+      </GROUP>
+      <GROUP id="{46797449-EFA9-85B4-2A10-567F1DB7E949}" name="ui">
+        <FILE id="aDh7I0" name="dataDisplayer.cpp" compile="1" resource="0"
+              file="Source/ui/dataDisplayer.cpp"/>
+        <FILE id="aEJS6b" name="dataDisplayer.h" compile="0" resource="0" file="Source/ui/dataDisplayer.h"/>
+        <FILE id="QaM5EN" name="eqDisplayer.cpp" compile="1" resource="0" file="Source/ui/eqDisplayer.cpp"/>
+        <FILE id="Z1abWd" name="eqDisplayer.h" compile="0" resource="0" file="Source/ui/eqDisplayer.h"/>
+        <FILE id="O3DE2H" name="eqZeroPole.cpp" compile="1" resource="0" file="Source/ui/eqZeroPole.cpp"/>
+        <FILE id="FjG7CG" name="eqZeroPole.h" compile="0" resource="0" file="Source/ui/eqZeroPole.h"/>
+        <FILE id="QT0j16" name="LM_slider.cpp" compile="1" resource="0" file="Source/ui/LM_slider.cpp"/>
+        <FILE id="yDxB3e" name="LM_slider.h" compile="0" resource="0" file="Source/ui/LM_slider.h"/>
+      </GROUP>
+      <FILE id="mle2xI" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="eQ9Rqd" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="mKiWy8" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="kljpLQ" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Lmeq"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="Lmeq"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="C:/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
