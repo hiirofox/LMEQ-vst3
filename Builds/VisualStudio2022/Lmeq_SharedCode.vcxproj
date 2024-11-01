@@ -144,6 +144,7 @@
     <ClCompile Include="..\..\Source\dsp\complex.cpp"/>
     <ClCompile Include="..\..\Source\dsp\eq.cpp"/>
     <ClCompile Include="..\..\Source\dsp\fft.cpp"/>
+    <ClCompile Include="..\..\Source\dsp\fft_filter.cpp"/>
     <ClCompile Include="..\..\Source\ui\dataDisplayer.cpp"/>
     <ClCompile Include="..\..\Source\ui\eqDisplayer.cpp"/>
     <ClCompile Include="..\..\Source\ui\eqZeroPole.cpp"/>
@@ -2527,6 +2528,7 @@
     <ClInclude Include="..\..\Source\dsp\complex.h"/>
     <ClInclude Include="..\..\Source\dsp\eq.h"/>
     <ClInclude Include="..\..\Source\dsp\fft.h"/>
+    <ClInclude Include="..\..\Source\dsp\fft_filter.h"/>
     <ClInclude Include="..\..\Source\ui\dataDisplayer.h"/>
     <ClInclude Include="..\..\Source\ui\eqDisplayer.h"/>
     <ClInclude Include="..\..\Source\ui\eqZeroPole.h"/>

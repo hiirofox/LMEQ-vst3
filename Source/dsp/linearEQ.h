@@ -4,6 +4,7 @@
 #include "eq.h"
 #include "complex.h"
 #include "fft.h"
+#include "fft_filter.h"
 
 #define FFT_Length 1024//fir_length = fft_length*2 ÒòÎªÒª¶Ô³Æ
 class LinearEQ
@@ -19,6 +20,19 @@ private:
 	float lpFirSum = 0;
 public:
 	LinearEQ();
+	void init(LMEQ* eq);
+	void updata();
+	void proc(const float* inl, const float* inr, float* outl, float* outr, int numSample);
+};
+
+class LinearEQ_FFT
+{
+private:
+	LMEQ* iir = NULL;
+	FFTFilter fftfilt;
+	float window[FFTFilterSize];
+public:
+	LinearEQ_FFT();
 	void init(LMEQ* eq);
 	void updata();
 	void proc(const float* inl, const float* inr, float* outl, float* outr, int numSample);

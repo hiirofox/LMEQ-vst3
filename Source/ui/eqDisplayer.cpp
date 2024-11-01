@@ -49,7 +49,7 @@ void LMEQDisplayer::paint(juce::Graphics& g)
 		for (int j = 0; j < gridLineNum2; ++j)//x轴
 		{
 			float posx = pos - (expf(j * 0.15) * freqRange / 6.0 - 1) * 0.05;
-			posx = atanf(posx * M_PI / 2.0);//补偿
+			//posx = atanf(posx * M_PI / 2.0);//补偿
 			int col = (gridLineNum2 - j + 1) * 180 / 3 / (gridLineNum2 + 1);
 			g.setColour(juce::Colour(col, col, col));
 			g.drawLine(posx * w, 0, posx * w, h, 1);
@@ -321,20 +321,9 @@ void LMEQDisplayer::updataEQ()
 		if (eq->nodes[i].type == 5) biquadApplyHighShelf(&eq->nodes[i], eq->nodes[i].ctof, eq->nodes[i].reso, eq->nodes[i].gain);
 	}
 }
-/*
+
 const float FRFixConst = M_PI / 2;
 float FR_FreqWarping(float linear_f, float freqRange)
 {
 	return atanf(expf((linear_f - 1.0) * freqRange) * FRFixConst) / FRFixConst;
-}
-*/
-const float f_min = 24.0;       // 最小频率
-const float f_max = 24000.0;    // 最大频率
-const float x_max = 1.0;      // 横坐标最大值
-const float gamma = 0.8;
-float FR_FreqWarping(float x, float freqRange) {
-	float ratio = f_max / f_min; // 频率比率
-	float normalized_x = x / x_max;// 调整映射函数，引入 gamma 参数
-	float frequency = f_min * pow(ratio, pow(normalized_x, gamma));
-	return frequency / 48000.0;
 }

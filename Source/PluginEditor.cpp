@@ -18,7 +18,7 @@ LmeqAudioProcessorEditor::LmeqAudioProcessorEditor(LmeqAudioProcessor& p)
 	setResizable(true, true); // 允许窗口调整大小
 
 	//setResizeLimits(64 * 11, 64 * 5, 10000, 10000); // 设置最小宽高为300x200，最大宽高为800x600
-	setSize(64 * 11, 64 * 4 + 64 + 48 * 2);
+	setSize(64 * 11, 64 * 4 + 64);
 
 	//constrainer.setFixedAspectRatio(11.0 / 4.0);  // 设置为16:9比例
 	//setConstrainer(&constrainer);  // 绑定窗口的宽高限制
@@ -76,10 +76,12 @@ void LmeqAudioProcessorEditor::paint(juce::Graphics& g)
 
 	int w = getBounds().getWidth(), h = getBounds().getHeight();
 	juce::String str = audioProcessor.isEnableLinear ?
-		"Mode=Linear (Switch modes by pressing the middle mouse button.)" :
-		"Mode=Biquad (Switch modes by pressing the middle mouse button.)";
+		"Linear" :
+		"Biquad";
 
-	g.drawText(str, 48, 16, w, 32, 1);
+	g.drawText(str, 32 + 8 * 12, 16, w, 16, 1);
+	g.setColour(juce::Colour(0xff00ff00));
+	g.drawText("L-MODEL EQ", 32, 16, w, 16, 1);
 	//g.drawText("L-MODEL Equaliser V1.0", 48, 0, w, 16,1);
 }
 
@@ -91,7 +93,7 @@ void LmeqAudioProcessorEditor::resized()
 	//displayEQ.setBounds(juce::Rectangle<int>::leftTopRightBottom(48, 48, getBounds().getWidth() - getBounds().getHeight() + 64 + 48 * 2, getBounds().getHeight() - 48 - 64 - 48 * 2));
 	//displayZeroPole.setBounds(juce::Rectangle<int>::leftTopRightBottom(getBounds().getWidth() - getBounds().getHeight() + 64, 48, getBounds().getWidth() - 48, getBounds().getHeight() - 48 - 64 - 48 * 2));
 	auto convXY = juce::Rectangle<int>::leftTopRightBottom;
-	displayEQ.setBounds(convXY(48, 48, w - 48, h - 48));
+	displayEQ.setBounds(convXY(32, 32, w - 32, h - 32));
 	//B_LINEAR.setBounds(w - 64 - 48, h - 48 - 64, 64, 32);
 
 	//S_TotalGain.setBounds(32, h - 64 - 64, 64, 64);

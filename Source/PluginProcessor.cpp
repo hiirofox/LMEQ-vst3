@@ -25,7 +25,7 @@ LmeqAudioProcessor::LmeqAudioProcessor()
 {
 
 	LMEQInit(&eq, MaxEQNodeNum);
-	linearEQ.init(&eq);
+	linearEQ_FFT.init(&eq);
 	startTimerHz(30);//用来更新linearEQ的
 }
 
@@ -102,7 +102,7 @@ void LmeqAudioProcessor::setCurrentProgram(int index)
 
 const juce::String LmeqAudioProcessor::getProgramName(int index)
 {
-	return "IIRPitchShifter";
+	return "LMEQ";
 }
 
 void LmeqAudioProcessor::changeProgramName(int index, const juce::String& newName)
@@ -175,7 +175,7 @@ void LmeqAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::Mi
 	}
 	else
 	{
-		linearEQ.proc(recbufl, recbufr, wavbufl, wavbufr, numSamples);
+		linearEQ_FFT.proc(recbufl, recbufr, wavbufl, wavbufr, numSamples);
 	}
 
 
@@ -190,7 +190,7 @@ void LmeqAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::Mi
 		procLoopCount = 0;
 		if (isEnableLinear)
 		{
-			linearEQ.updata();
+			linearEQ_FFT.updata();
 		}
 	}
 }

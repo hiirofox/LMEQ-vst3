@@ -640,6 +640,9 @@
     <ClCompile Include="..\..\Source\dsp\fft.cpp">
       <Filter>Lmeq\Source\dsp</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\dsp\fft_filter.cpp">
+      <Filter>Lmeq\Source\dsp</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ui\dataDisplayer.cpp">
       <Filter>Lmeq\Source\ui</Filter>
     </ClCompile>
@@ -3214,6 +3217,9 @@
       <Filter>Lmeq\Source\dsp</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\dsp\fft.h">
+      <Filter>Lmeq\Source\dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\dsp\fft_filter.h">
       <Filter>Lmeq\Source\dsp</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\dataDisplayer.h">

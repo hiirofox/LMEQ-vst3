@@ -45,9 +45,9 @@ void LinearEQ::updata()
 	firSum = 0;
 	for (int i = 0; i < FFT_Length * 2; ++i)// to unit
 	{
-		firSum += convDat[i];
+		firSum += convDat[i] * convDat[i];
 	}
-	firSum = 1.0 / firSum;
+	firSum = 1.0 / sqrtf(firSum);
 }
 
 void LinearEQ::proc(const float* inl, const float* inr, float* outl, float* outr, int numSample)
@@ -73,3 +73,33 @@ void LinearEQ::proc(const float* inl, const float* inr, float* outl, float* outr
 		outr[i] = sumr * lpFirSum;
 	}
 }
+
+LinearEQ_FFT::LinearEQ_FFT()
+{
+	for (int i = 0; i < FFTFilterSize; ++i)
+	{
+		window[i] = 0.5 - 0.5 * cosf((float)i / FFTFilterSize * 2.0 * M_PI);
+	}
+	FFTFilterInit(&fftfilt, window);
+}
+
+void LinearEQ_FFT::init(LMEQ* eq)
+{
+	this->iir = eq;
+}
+
+void LinearEQ_FFT::updata()
+{
+	for (int i = 0; i < FFTFilterSize >> 1; ++i)
+	{
+		complex_f32_t v = LMEQGetFreqResponse(iir, (float)i / FFT_Length * 2.0 * M_PI);
+		fftfilt.core[i].re = sqrtf(v.re * v.re + v.im * v.im);
+		fftfilt.core[i].im = 0;
+	}
+}
+
+void LinearEQ_FFT::proc(const float* inl, const float* inr, float* outl, float* outr, int numSample)
+{
+	FFTFilterProcStereo(&fftfilt, inl, inr, outl, outr, numSample);
+}
+

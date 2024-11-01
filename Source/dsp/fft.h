@@ -6,7 +6,6 @@
 #include <math.h>
 #include "complex.h"
 
-#define M_PI 3.1415926535897932384626
 
 void fft_f32(complex_f32_t* a, int n, int inv);
 

@@ -15,6 +15,8 @@
         <FILE id="tJECG9" name="eq.h" compile="0" resource="0" file="Source/dsp/eq.h"/>
         <FILE id="u93MCR" name="fft.cpp" compile="1" resource="0" file="Source/dsp/fft.cpp"/>
         <FILE id="gEq2eM" name="fft.h" compile="0" resource="0" file="Source/dsp/fft.h"/>
+        <FILE id="GFoK9h" name="fft_filter.cpp" compile="1" resource="0" file="Source/dsp/fft_filter.cpp"/>
+        <FILE id="k0Ub8B" name="fft_filter.h" compile="0" resource="0" file="Source/dsp/fft_filter.h"/>
       </GROUP>
       <GROUP id="{46797449-EFA9-85B4-2A10-567F1DB7E949}" name="ui">
         <FILE id="aDh7I0" name="dataDisplayer.cpp" compile="1" resource="0"

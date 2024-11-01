@@ -67,7 +67,8 @@ public:
 	}
 
 	LMEQ eq;
-	LinearEQ linearEQ;
+	//LinearEQ linearEQ;
+	LinearEQ_FFT linearEQ_FFT;
 	void timerCallback() override;//¸üÐÂlinearEQÓÃ
 	int isEQInit = 0;
 	float fftData[MaxFFTLength];
